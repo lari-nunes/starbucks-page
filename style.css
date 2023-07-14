@@ -1,0 +1,306 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -40px;
+    cursor: pointer;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+header .logo {
+    position: relative;
+    max-width: 80px;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+}
+
+.cursor:hover {
+    transform: scale(1.2);
+    color: #017143;
+}
+
+header ul li {
+    position: relative;
+    display: inline-block;
+}
+
+header ul li a {
+    display: inline-block;
+    color: #333;
+    font-weight: 400;
+    margin-left: 40px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .textBox {
+    position: relative;
+    max-width: 600px;
+    margin-left: 48px;
+}
+
+.content .textBox h2 {
+    color: #333;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+
+.content .textBox h2 span {
+    color: #017143;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+.content .textBox p {
+    color: #333;
+}
+
+.content .textBox a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #017143;
+    color: #fff;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.content .textBox a:hover {
+    background: #472601ef;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.content .imgBox {
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.content .imgBox img {
+    max-width: 350px;
+    animation: jumpAnimation 2s infinite;
+}
+
+@keyframes jumpAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.content .imgBox img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.thumb {
+    position: absolute;
+    left: 50%;
+    bottom: 38px;
+    margin-left: -50px;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.thumb li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.thumb li:hover {
+    transform: translateY(-15px);
+}
+
+.thumb li img {
+    max-width: 60px;
+}
+
+.sci {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    display: inline-block;
+    margin: 5px 0;
+    transform: scale(0.6);
+    filter: invert(1);
+}
+
+.sci li a img:hover {
+    transform: scale(1.3);
+}
+
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #017143;
+    clip-path: circle(600px at right 800px);
+    transition: background 1.0s ease;
+}
+
+@media (max-width: 991px){
+    header{
+        padding: 25px;
+    }
+    header .logo{
+        max-width: 60px;
+    }
+
+    header ul{
+        display: none;
+    }
+    .toggle{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background:url("./img/menu.png");
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        z-index: 11;
+    }
+    .toggle.active{
+        position: fixed;
+        right: 20px;
+        background:url("./img/close.png");
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    header ul.navigation.active{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #fff;
+        z-index: 10;
+    }
+    header ul li a {
+        font-weight: bold;
+        color: #017143;
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+    section{
+        padding: 20px 20px 120px;
+    }
+    .content{
+        flex-direction: column;
+        margin-top: 100px;
+    }
+    .content .textBox h2 {
+        font-size: 2.8em;
+        margin-bottom: 15px;
+    }
+    .content .textBox p{
+        font-size: 1.2em;
+    }
+    .content .textBox {
+        max-width: 100%;
+    }
+    .content .imgBox{
+        max-width: 100%;
+        justify-content: center;
+    }
+    .content .imgBox img{
+        max-width: 420px;
+        margin-left: 80px;
+    }
+    .thumb {
+        width: 50px;
+        margin-left: -130px;
+    }
+    .thumb li img{
+        max-width: 65px; /* mudar o tamanho das opções dos frapuccino */
+    }
+    .circle{
+        clip-path: circle(500px at center bottom);
+    }
+    .sci{
+        background: #017143;
+        right: 0;
+        width: 50px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+}
