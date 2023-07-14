@@ -1,3 +1,3 @@
  - Page Starbucks responsiva e animada!
 ------------------------------------------------
-https://starbucks-two-psi.vercel.app
+Deploy: https://starbucks-two-psi.vercel.app
